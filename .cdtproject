@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse-cdt version="2.0"?>
+
+<cdtproject id="org.eclipse.cdt.make.core.make">
+<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+<data>
+<item id="scannerConfiguration">
+<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.make.core.GCCStandardMakePerProjectProfile"/>
+<profile id="org.eclipse.cdt.make.core.GCCStandardMakePerProjectProfile">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}" command="gcc" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.make.core.GCCStandardMakePerFileProfile">
+<buildOutputProvider>
+<openAction enabled="false" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="makefileGenerator">
+<runAction arguments="-f ${project_name}_scd.mk" command="make" useDefault="true"/>
+<parser enabled="false"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfile">
+<buildOutputProvider>
+<openAction enabled="false" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}" command="gcc" useDefault="true"/>
+<parser enabled="false"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfile">
+<buildOutputProvider>
+<openAction enabled="false" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}" command="gcc" useDefault="true"/>
+<parser enabled="false"/>
+</scannerInfoProvider>
+</profile>
+</item>
+<item id="org.eclipse.cdt.core.pathentry">
+<pathentry include="/home/DETLAB/geant4/geant_DETLAB/LXe/include" kind="inc" path="" system="true"/>
+<pathentry include="/home/DETLAB/geant4/CLHEP/include" kind="inc" path="" system="true"/>
+<pathentry include="/home/DETLAB/geant4/geant4.9.3.p02/include" kind="inc" path="" system="true"/>
+<pathentry kind="src" path=""/>
+<pathentry kind="out" path=""/>
+<pathentry kind="con" path="org.eclipse.cdt.make.core.DISCOVERED_SCANNER_INFO"/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/geant4.9.3.p02/lib/Linux-g++/libG4digits_hits.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/geant4.9.3.p02/lib/Linux-g++/libG4error_propagation.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/geant4.9.3.p02/lib/Linux-g++/libG4event.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/geant4.9.3.p02/lib/Linux-g++/libG4FR.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/geant4.9.3.p02/lib/Linux-g++/libG4geometry.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/geant4.9.3.p02/lib/Linux-g++/libG4global.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/geant4.9.3.p02/lib/Linux-g++/libG4GMocren.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/geant4.9.3.p02/lib/Linux-g++/libG4graphics_reps.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/geant4.9.3.p02/lib/Linux-g++/libG4intercoms.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/geant4.9.3.p02/lib/Linux-g++/libG4interfaces.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/geant4.9.3.p02/lib/Linux-g++/libG4materials.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/geant4.9.3.p02/lib/Linux-g++/libG4modeling.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/geant4.9.3.p02/lib/Linux-g++/libG4parmodels.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/geant4.9.3.p02/lib/Linux-g++/libG4particles.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/geant4.9.3.p02/lib/Linux-g++/libG4persistency.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/geant4.9.3.p02/lib/Linux-g++/libG4physicslists.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/geant4.9.3.p02/lib/Linux-g++/libG4processes.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/geant4.9.3.p02/lib/Linux-g++/libG4RayTracer.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/geant4.9.3.p02/lib/Linux-g++/libG4readout.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/geant4.9.3.p02/lib/Linux-g++/libG4run.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/geant4.9.3.p02/lib/Linux-g++/libG4track.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/geant4.9.3.p02/lib/Linux-g++/libG4tracking.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/geant4.9.3.p02/lib/Linux-g++/libG4Tree.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/geant4.9.3.p02/lib/Linux-g++/libG4visHepRep.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/geant4.9.3.p02/lib/Linux-g++/libG4vis_management.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/geant4.9.3.p02/lib/Linux-g++/libG4visXXX.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/geant4.9.3.p02/lib/Linux-g++/libG4VRML.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/geant4.9.3.p02/lib/Linux-g++/libG4zlib.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/CLHEP/lib/libCLHEP.a" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/CLHEP/lib/libCLHEP.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/CLHEP/lib/libCLHEP-2.1.0.0.a" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/CLHEP/lib/libCLHEP-2.1.0.0.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/CLHEP/lib/libCLHEP-Cast-2.1.0.0.a" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/CLHEP/lib/libCLHEP-Cast-2.1.0.0.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/CLHEP/lib/libCLHEP-Evaluator-2.1.0.0.a" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/CLHEP/lib/libCLHEP-Evaluator-2.1.0.0.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/CLHEP/lib/libCLHEP-Exceptions-2.1.0.0.a" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/CLHEP/lib/libCLHEP-Exceptions-2.1.0.0.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/CLHEP/lib/libCLHEP-GenericFunctions-2.1.0.0.a" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/CLHEP/lib/libCLHEP-GenericFunctions-2.1.0.0.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/CLHEP/lib/libCLHEP-Geometry-2.1.0.0.a" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/CLHEP/lib/libCLHEP-Geometry-2.1.0.0.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/CLHEP/lib/libCLHEP-Matrix-2.1.0.0.a" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/CLHEP/lib/libCLHEP-Matrix-2.1.0.0.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/CLHEP/lib/libCLHEP-Random-2.1.0.0.a" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/CLHEP/lib/libCLHEP-Random-2.1.0.0.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/CLHEP/lib/libCLHEP-RandomObjects-2.1.0.0.a" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/CLHEP/lib/libCLHEP-RandomObjects-2.1.0.0.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/CLHEP/lib/libCLHEP-RefCount-2.1.0.0.a" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/CLHEP/lib/libCLHEP-RefCount-2.1.0.0.so" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/CLHEP/lib/libCLHEP-Vector-2.1.0.0.a" path=""/>
+<pathentry kind="lib" library="/home/DETLAB/geant4/CLHEP/lib/libCLHEP-Vector-2.1.0.0.so" path=""/>
+</item>
+</data>
+</cdtproject>

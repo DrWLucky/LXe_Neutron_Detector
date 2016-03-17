@@ -1,0 +1,32 @@
+#!/bin/csh
+date >> run.log
+##set  name="blabla_"$seed
+###PBS -N $name
+##echo  "name = $name" >> run.log
+##PBS -m ae
+##PBS -M israelashvili@gmail.com
+##PBS -v seed,f_text,n_events,run_mac
+
+
+
+
+#cd $PBS_O_WORKDIR                                        #<==================================================
+#echo "change dir to $PBS_O_WORKDIR"                      #<==================================================
+cd /mnt/Lustre/detect/itamari/RunLog                      #<==================================================
+echo "change dir to /mnt/Lustre/detect/itamari/RunLog"    #<==================================================
+
+#echo "change dir to $PBS_O_WORKDIR" >> run.log
+#echo "call g4 with seed = $seed, n_events=$n_events, text=$f_text, run_mac = $run_mac"
+echo "call g4 with seed = $seed, n_events=$n_events, text=$f_text, run_mac = $run_mac" >> run.log
+
+cd $PBS_O_WORKDIR     #<==================================================
+
+./$prog  $seed $n_events $f_text  $run_mac
+#echo "running data into run.log"
+#date >> run.log
+
+cd /mnt/Lustre/detect/itamari/RunLog     #<==================================================
+
+echo "end of  run  seed = $seed"
+
+cd $PBS_O_WORKDIR     #<==================================================

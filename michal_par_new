@@ -1,0 +1,57 @@
+#!/bin/csh
+# $1 - start, $2 end_run $3 mfile_text $4 n_evetns $5 run.mac
+set home2=`pwd`
+echo ${home2}
+if ($#argv != 6) then
+        echo "Usage: $0 prog_name  start_seed end_seed text_in_out_file total_num_of_events run.mac"
+    exit
+endif
+# set the name of the program
+set prog=$1
+set start=$2
+set end=$3
+set seed=$start
+set f_text=/mnt/Lustre/detect/itamari/$4   #<==================================================
+#set f_text=/srv01/detect/itamari/output_meanwhile/$4
+set total_events=$5
+set n_events=0
+echo "start= $start"
+echo "end= $end"
+echo "total_events= $total_events"
+#@ n_events=$total_events / (($end - $start) + 1 )
+set n_events =  `echo "$total_events / (($end - $start) + 1 ) " | bc ` 
+echo "n evernts = $n_events"
+#exit
+set run_mac=$6
+echo "start = $start, end = $end"
+echo "running  $seed $f_text $n_events $run_mac"
+mkdir -p $f_text
+set f_text=$f_text/
+echo "f_text= $f_text"
+cd /mnt/Lustre/detect/itamari/RunLog        #<==================================================
+echo "************Starting at `date`" >> run.log
+cd $home2  #PBS_O_WORKDIR       #<==================================================
+while ( $seed <= $end)
+#echo "calling geant num seed=$seed"
+	# call qsub
+	echo "seed = $seed, end = $end"
+	if ($seed == $end) then
+
+		set name=$prog"_"$seed
+                cd /mnt/Lustre/detect/itamari/RunLog        #<==================================================
+		echo "name = $name" >> run.log 
+                cd $home2       #<==================================================
+		qsub -N $name -q S -o /mnt/Lustre/detect/itamari/RunLog -e /mnt/Lustre/detect/itamari/RunLog -m ae -M israelashvili@gmail.com  -V -v prog=$prog,seed=$seed,f_text=$f_text,n_events=$n_events,run_mac=$run_mac  g4batch_new.pbs
+		@ seed = $seed + 1
+#	
+	else 
+		set name=$prog"_"$seed
+                cd /mnt/Lustre/detect/itamari/RunLog        #<==================================================
+		echo "name = $name" >> run.log 
+                cd $home2       #<==================================================
+		qsub -N $name  -q S   -o /mnt/Lustre/detect/itamari/RunLog -e /mnt/Lustre/detect/itamari/RunLog  -V -v prog=$prog,seed=$seed,f_text=$f_text,n_events=$n_events,run_mac=$run_mac  g4batch_new.pbs
+		@ seed = $seed + 1
+	endif
+end
+
+
